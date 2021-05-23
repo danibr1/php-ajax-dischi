@@ -39,7 +39,7 @@
                 <!-- CARDS -->
                 <?php foreach ($database as $album) { ?>
                     <div class="card text-center">
-                        <div class="details">
+                        <div class="cd">
                             <img src="<?php echo $album['poster']?>" alt="<?php echo $album['title']?>" />
                             <h3><?php echo $album['title']?></h3>
                             <div><?php echo $album['author']?></div>

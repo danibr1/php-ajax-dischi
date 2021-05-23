@@ -19,6 +19,9 @@ body {
 .flex {
     display: flex;
 }
+.flex-column {
+    flex-direction: column;
+}
 .jc-between {
     justify-content: space-between;
 }
@@ -42,7 +45,7 @@ img {
 
 /* HEADER ****************************************/
 .main {
-    height: calc(100% - 65px);
+    height: calc(100vh - 65px);
     background: #182d3d;
 }
 .main .container {
@@ -56,15 +59,15 @@ img {
 .card {
     display: flex;
     flex-direction: column;
-    width: 220px;
-    height: 300px;
+    width: 250px;
+    height: 340px;
     padding: 20px 10px;
     background: #000;
     margin: 30px;
 }
 
 .card img {
-    width: 140px;
+    width: 180px;
     margin-bottom: 5px;
 }
 

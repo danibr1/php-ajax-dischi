@@ -1,7 +1,3 @@
-<?php // APP QUESTIONS
-    require_once __DIR__ . '/partials/database.php'
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,32 +19,38 @@
             rel="stylesheet"
         />
         <!-- STYLE  -->
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/style.css" />
+        <!-- VUE -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     </head>
 
     <body>
+        <div id="app">
             <!-- HEADER -->
             <header class="header">
                 <div class="container flex ai-center">
-                    <img src="./img/logo.png" alt="spotify">
+                    <img src="./img/logo.png" alt="spotify" />
                 </div>
             </header>
             <!-- MAIN CONTENT -->
             <main class="main">
                 <div class="container flex">
                     <!-- CARDS -->
-                    <?php foreach ($database as $album) { ?>
-                        <div class="card text-center">
-                            <div class="details">
-                                <img src="<?php echo $album['poster']?>" alt="<?php echo $album['title']?>" />
-                                <h3><?php echo $album['title']?></h3>
-                                <div><?php echo $album['author']?></div>
-                                <div><?php echo $album['year']?></div>
-                                <div><?php echo $album['genre']?></div>
-                            </div>
-                        </div>
-                    <?php } ?>
+                    <div
+                        v-for="album in albums"
+                        class="card flex flex-column ai-center text-center"
+                    >
+                        <img :src="album.poster" :alt="album.title" />
+                        <h3>{{ album.title }}</h3>
+                        <div>{{ album.author }}</div>
+                        <div>{{ album.year }}</div>
+                        <div>{{ album.genre }}</div>
+                    </div>
                 </div>
             </main>
+        </div>
+        <!-- JS -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
